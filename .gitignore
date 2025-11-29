@@ -1,23 +1,16 @@
 # Godot 4+ specific ignores
-/android/
-# Godot-specific files that should not be committed
 .godot/
-*.translation
-.mono/
-
-# Windows/macOS/Linux files
-.DS_Store
-Thumbs.db
-
-# Exported files
-/bin/
-/export/
-*.apk
-*.exe
-*.pck
-*.zip
-
+/android/
+# Godot default generated project settings
+.godot/
+# Godot imported files directory
+.import/
 # User-specific settings (usually safe to ignore)
-# If multiple developers need identical editor settings, remove this line.
-# editor_settings-3.tres
-
+*.user
+# Any saved editor layouts
+/editor/
+# Default build output directory for export templates
+/bin/
+# All resource files that are not explicitly loaded by the engine
+# (helps keep the repository cleaner)
+*.import
