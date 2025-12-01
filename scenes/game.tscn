@@ -16,3 +16,12 @@ position = Vector2(586, -177)
 
 [node name="Sprite" parent="." instance=ExtResource("2_lnu2h")]
 position = Vector2(-120, -74)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("1_yqjtg")]
+position = Vector2(-62, -411)
+
+[node name="StaticBody2D3" parent="StaticBody2D4" instance=ExtResource("1_yqjtg")]
+position = Vector2(177.81757, -321.28452)
+
+[node name="StaticBody2D3" parent="StaticBody2D4/StaticBody2D3" instance=ExtResource("1_yqjtg")]
+position = Vector2(215.0434, -249.22922)
