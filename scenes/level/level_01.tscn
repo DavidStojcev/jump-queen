@@ -1,0 +1,192 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://script/level/level_base.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/objects/platform.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/objects/falling_block.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/objects/spike.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/objects/signpost.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/objects/checkpoint.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/props/bush_hint.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://scenes/props/mushroom_hint.tscn" id="8"]
+
+[sub_resource type="RectangleShape2D" id="exit_shape"]
+size = Vector2(64, 200)
+
+[node name="Level01" type="Node2D"]
+script = ExtResource("1")
+spawn_point = Vector2(100, 480)
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="StartGround" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(250, 530)
+platform_size = Vector2(500, 64)
+
+[node name="StepUp" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(570, 460)
+platform_size = Vector2(100, 32)
+
+[node name="SafeLanding1" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(880, 490)
+platform_size = Vector2(150, 32)
+
+[node name="PostMemory" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(1500, 490)
+platform_size = Vector2(160, 32)
+
+[node name="SecretUpper1" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(1500, 310)
+platform_size = Vector2(120, 28)
+
+[node name="SecretUpper2" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(1680, 270)
+platform_size = Vector2(120, 28)
+
+[node name="SecretUpper3" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(1860, 310)
+platform_size = Vector2(120, 28)
+
+[node name="BaitPlatform" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(1720, 460)
+platform_size = Vector2(80, 28)
+
+[node name="CheckpointGround" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(2060, 490)
+platform_size = Vector2(200, 32)
+
+[node name="FinalStretch" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(2800, 490)
+platform_size = Vector2(200, 32)
+
+[node name="FallingBlocks" type="Node2D" parent="."]
+
+[node name="TutorialCrumble" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(710, 430)
+block_size = Vector2(72, 32)
+is_safe = false
+
+[node name="MemoryBlock1" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(1020, 400)
+is_safe = true
+
+[node name="MemoryBlock2" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(1100, 400)
+is_safe = false
+
+[node name="MemoryBlock3" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(1180, 400)
+is_safe = false
+
+[node name="MemoryBlock4" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(1260, 400)
+is_safe = true
+
+[node name="MemoryBlock5" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(1340, 400)
+is_safe = false
+
+[node name="GauntletBlock1" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(2300, 400)
+is_safe = true
+
+[node name="GauntletBlock2" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(2400, 370)
+shake_duration = 0.3
+is_safe = false
+
+[node name="GauntletBlock3" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(2500, 340)
+is_safe = true
+
+[node name="GauntletBlock4" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(2600, 370)
+shake_duration = 0.3
+is_safe = false
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="MemorySpike1" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(1060, 560)
+spike_width = 40.0
+
+[node name="MemorySpike2" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(1140, 560)
+spike_width = 40.0
+
+[node name="MemorySpike3" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(1220, 560)
+spike_width = 40.0
+
+[node name="MemorySpike4" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(1300, 560)
+spike_width = 40.0
+
+[node name="BaitSpike1" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(1820, 490)
+spike_width = 36.0
+
+[node name="BaitSpike2" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(1860, 490)
+spike_width = 36.0
+
+[node name="BaitSpike3" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(1900, 490)
+spike_width = 36.0
+
+[node name="GauntletSpike1" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(2400, 540)
+spike_width = 44.0
+
+[node name="GauntletSpike2" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(2500, 540)
+spike_width = 44.0
+
+[node name="GauntletSpike3" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(2600, 540)
+spike_width = 44.0
+
+[node name="Signposts" type="Node2D" parent="."]
+
+[node name="LiarSign" parent="Signposts" instance=ExtResource("5")]
+position = Vector2(1580, 460)
+sign_text = "Jump right! Safe! ->"
+is_misleading = true
+
+[node name="ReversePsych" parent="Signposts" instance=ExtResource("5")]
+position = Vector2(1440, 280)
+sign_text = "DANGER! Turn back!"
+is_misleading = true
+
+[node name="GauntletSign" parent="Signposts" instance=ExtResource("5")]
+position = Vector2(2680, 330)
+sign_text = "Almost there! Keep going!"
+is_misleading = false
+
+[node name="Checkpoint1" parent="." instance=ExtResource("6")]
+position = Vector2(2060, 490)
+
+[node name="EnvHints" type="Node2D" parent="."]
+
+[node name="DangerBush" parent="EnvHints" instance=ExtResource("7")]
+position = Vector2(980, 385)
+hint_type = 1
+
+[node name="DangerMushroom" parent="EnvHints" instance=ExtResource("8")]
+position = Vector2(1790, 460)
+hint_type = 2
+
+[node name="SafeBush" parent="EnvHints" instance=ExtResource("7")]
+position = Vector2(2790, 475)
+hint_type = 0
+
+[node name="CrumbleHintMushroom" parent="EnvHints" instance=ExtResource("8")]
+position = Vector2(2370, 360)
+hint_type = 2
+
+[node name="ExitZone" type="Area2D" parent="."]
+position = Vector2(2900, 400)
+collision_layer = 0
+collision_mask = 1
+
+[node name="ExitShape" type="CollisionShape2D" parent="ExitZone"]
+shape = SubResource("exit_shape")
