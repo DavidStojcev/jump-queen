@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://tests/test_runner.gd" id="1_runner"]
+[ext_resource type="PackedScene" uid="uid://duichfdnk5a62" path="res://scenes/character.tscn" id="2_player"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
+size = Vector2(1000, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wall"]
+size = Vector2(40, 200)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ceiling"]
+size = Vector2(200, 30)
+
+[node name="TestRunner" type="Node2D"]
+script = ExtResource("1_runner")
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(250, 250)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+shape = SubResource("RectangleShape2D_floor")
+
+[node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2(400, 130)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+shape = SubResource("RectangleShape2D_wall")
+
+[node name="Ceiling" type="StaticBody2D" parent="."]
+position = Vector2(100, 80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
+shape = SubResource("RectangleShape2D_ceiling")
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+position = Vector2(100, 212)

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cayvne85dk563"]
+
+[ext_resource type="SpriteFrames" uid="uid://cj723qwvfx001" path="res://resources/wood_vfx_frames.tres" id="1_vfx"]
+
+[node name="WoodVFX" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = ExtResource("1_vfx")
+animation = &"repeatable"
+autoplay = "repeatable"
+frame_progress = 0.5

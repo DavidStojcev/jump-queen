@@ -1,0 +1,136 @@
+[gd_resource type="SpriteFrames" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 01/Separated Frames/Wood VFX 01 Hit1.png" id="1_8o8pc"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 01/Separated Frames/Wood VFX 01 Hit2.png" id="2_rgq04"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 01/Separated Frames/Wood VFX 01 Hit3.png" id="3_71bgr"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 01/Separated Frames/Wood VFX 01 Hit4.png" id="4_sbds2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 01/Separated Frames/Wood VFX 01 Hit5.png" id="5_ugl45"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 01/Separated Frames/Wood VFX 01 Hit6.png" id="6_i2edh"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 01/Separated Frames/Wood VFX 01 Hit7.png" id="7_i6ixr"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 02/Separated Frames/Wood VFX 02 1.png" id="8_jifxg"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 02/Separated Frames/Wood VFX 02 2.png" id="9_supyy"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 02/Separated Frames/Wood VFX 02 3.png" id="10_jl2xp"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 02/Separated Frames/Wood VFX 02 4.png" id="11_w6qo0"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 02/Separated Frames/Wood VFX 02 5.png" id="12_tjq2x"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 02/Separated Frames/Wood VFX 02 6.png" id="13_ubpi7"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 02/Separated Frames/Wood VFX 02 7.png" id="14_v14sq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 02/Separated Frames/Wood VFX 02 8.png" id="15_4eied"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 02/Separated Frames/Wood VFX 02 9.png" id="16_h70c1"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 02/Separated Frames/Wood VFX 02 10.png" id="17_p7nyf"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 02/Separated Frames/Wood VFX 02 11.png" id="18_50mcw"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 02/Separated Frames/Wood VFX 02 12.png" id="19_ga0ml"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 02/Separated Frames/Wood VFX 02 13.png" id="20_t3sq2"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 02/Separated Frames/Wood VFX 02 14.png" id="21_1nntg"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 01/Separated Frames/Wood VFX 01 Repeatable1.png" id="22_1dpn4"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 01/Separated Frames/Wood VFX 01 Repeatable2.png" id="23_qc2fo"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 01/Separated Frames/Wood VFX 01 Repeatable3.png" id="24_ehiov"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 01/Separated Frames/Wood VFX 01 Repeatable4.png" id="25_4kbeq"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 01/Separated Frames/Wood VFX 01 Repeatable5.png" id="26_eke2m"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 01/Separated Frames/Wood VFX 01 Repeatable6.png" id="27_70qi3"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 01/Separated Frames/Wood VFX 01 Repeatable7.png" id="28_jjr63"]
+[ext_resource type="Texture2D" path="res://assets/sprites/Wood VFX 01/Separated Frames/Wood VFX 01 Repeatable8.png" id="29_wwbgd"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8o8pc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rgq04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_71bgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sbds2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ugl45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i2edh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_i6ixr")
+}],
+"loop": 1,
+"name": &"hit",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_jifxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_supyy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jl2xp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_w6qo0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_tjq2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ubpi7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_v14sq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4eied")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_h70c1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_p7nyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_50mcw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ga0ml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_t3sq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1nntg")
+}],
+"loop": 1,
+"name": &"impact",
+"speed": 14.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_1dpn4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_qc2fo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ehiov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_4kbeq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_eke2m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_70qi3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_jjr63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_wwbgd")
+}],
+"loop": 1,
+"name": &"repeatable",
+"speed": 10.0
+}]

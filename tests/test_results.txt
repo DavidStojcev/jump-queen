@@ -1,0 +1,113 @@
+
+Running character physics tests...
+
+[RUNNING] test_instant_ground_halt...
+  [PASS] State should be WALK while input is active
+  [PASS] Velocity.x should match walk_speed (Value: 140.000, Target: 140.000)
+  [PASS] State should be IDLE immediately on release
+  [PASS] Velocity.x must be strictly 0.0 (no residual sliding) (Value: 0.000, Target: 0.000)
+
+[RUNNING] test_jump_curve_scaling...
+  [PASS] State should be AIRBORNE after release
+  [PASS] Min jump Vx should be near min_horizontal_jump_velocity
+  [PASS] Min jump trajectory angle should be ~70° (actual: 68.81°)
+  [PASS] State should be AIRBORNE after max release
+  [PASS] Max jump Vx (230.0) must be significantly higher than Min jump Vx (102.5)
+  [PASS] Max jump Vy should reach max_jump_velocity (Value: 680.000, Target: 680.000)
+  [PASS] Max jump trajectory angle should remain ~70° (actual: 71.31°)
+
+[RUNNING] test_auto_fire_at_max_charge...
+  [PASS] State should be CHARGING on jump press
+  [PASS] Must auto-launch into AIRBORNE at max charge without key release
+  [PASS] Auto-launched jump must have maximum power minus 1 frame gravity (Value: 660.833, Target: 660.833)
+
+[RUNNING] test_directional_commitment...
+  [PASS] Charge direction should be committed to 1 (Right)
+  [PASS] State should be AIRBORNE
+  [PASS] Velocity.x must still be positive (Right) due to committed charge direction!
+
+[RUNNING] test_zero_air_control...
+  [PASS] Initial airborne velocity should be positive
+  [PASS] Horizontal velocity must not change in mid-air (strict zero air control) (Value: 117.500, Target: 117.500)
+
+[RUNNING] test_landing_recovery_lockout...
+  [PASS] Must be airborne
+  [PASS] Must enter LANDING_RECOVERY on touchdown
+  [PASS] Input must be locked out during landing recovery
+  [PASS] Velocity must remain 0 during landing lag (Value: 0.000, Target: 0.000)
+  [PASS] Must exit landing recovery into WALK or IDLE
+
+[RUNNING] test_splat_knockdown_and_recovery...
+  [PASS] Must transition to SPLAT_KNOCKDOWN upon high velocity impact
+  [PASS] Input must be completely locked during knockdown
+  [PASS] Velocity must be 0 while faceplanted (Value: 0.000, Target: 0.000)
+  [PASS] Must transition to GETTING_UP after knockdown timer expires
+  [PASS] Must return to IDLE after standing up
+
+[RUNNING] test_wall_bounce_kinematics...
+  [PASS] Must enter BONK_REBOUND state on wall impact
+  [PASS] Horizontal velocity must invert away from wall (actual: -125.00)
+  [PASS] Horizontal rebound speed must meet or exceed min_wall_bounce_speed
+
+[RUNNING] test_ceiling_bonk...
+  [PASS] ceiling_bonked signal must be emitted
+  [PASS] Vertical velocity must immediately zero out and begin descending (actual: 0.00)
+
+[RUNNING] test_charge_audio_pitch_ramp...
+  [PASS] Must be CHARGING
+  [PASS] Initial charge audio pitch must begin near 1.0x (Value: 1.000, Target: 1.000)
+  [PASS] Mid-charge pitch must ramp upwards (actual: 1.42x)
+  [PASS] High-charge pitch must reach near 1.75x (actual: 1.71x)
+
+[RUNNING] test_camera_screen_shake_events...
+  [PASS] Camera shake should begin at 0.0 (Value: 0.000, Target: 0.000)
+  [PASS] Camera must apply 2.0 shake on wall bonk (Value: 2.000, Target: 2.000)
+  [PASS] Camera must apply 5.0 shake on hard splat
+
+[RUNNING] test_ice_friction_and_sliding_charge...
+  [PASS] Character must slide along ice upon releasing movement keys (actual: 38.00)
+  [PASS] Must be CHARGING on ice
+  [PASS] Character must slide along ice while charging jump (actual: 34.00)
+
+[RUNNING] test_wind_drift_in_air...
+  [PASS] Must be airborne
+  [PASS] Wind must accelerate horizontal velocity while airborne (actual Vx: 30.00)
+
+[RUNNING] test_bouncy_surface_pad...
+  [PASS] Must bounce back into AIRBORNE without entering splat or landing recovery
+  [PASS] Vertical velocity must rebound upwards with high velocity (actual Vy: -756.13)
+
+[RUNNING] test_screen_transition_velocity_persistence...
+  [PASS] Player must cross into upper screen boundary (Y < 0)
+  [PASS] RoomCamera must emit room_changed when crossing boundary
+  [PASS] Camera must snap to upper room (0, -1)
+  [PASS] Horizontal velocity must persist across room boundary without reset
+  [PASS] Vertical velocity must persist across room boundary without reset
+
+[RUNNING] test_multi_screen_fall_splat_guarantee...
+  [PASS] Falling > 1.4 screens distance must guarantee SPLAT_KNOCKDOWN
+
+[RUNNING] test_jump_metrics_calculations...
+  [PASS] Max apex height should calculate to ~201 px (Value: 201.043, Target: 201.000)
+  [PASS] Max jump distance should calculate to ~272 px (Value: 272.000, Target: 272.000)
+  [PASS] Platform at (140, -120) must be within reachable jump envelope
+  [PASS] Platform at (380, -240) must be rejected as outside reach envelope
+
+[RUNNING] test_knight_visual_and_collision_setup...
+  [PASS] Character must have a Sprite2D child
+  [PASS] Sprite2D must have a texture assigned
+  [PASS] Sprite2D texture must be knight.png
+  [PASS] Sprite sheet must have 8 horizontal frames
+  [PASS] Sprite sheet must have 8 vertical frames
+  [PASS] Character must have a CollisionShape2D
+  [PASS] Collision shape must be RectangleShape2D
+  [PASS] Collision width (16.0) must be >= 14.0px to firmly span 16px tiles
+  [PASS] Collision height (26.0) must be >= 24.0px for solid presence
+  [PASS] Feet offset must calculate to ~18.0px (Value: 18.000, Target: 18.000)
+  [PASS] IDLE frame must be within 0..3 (actual: 0)
+  [PASS] WALK frame must be within 16..31 (actual: 16)
+  [PASS] CHARGING frame must be 41 or 43 (actual: 43)
+  [PASS] BONK_REBOUND frame must be within 48..51 (actual: 48)
+  [PASS] SPLAT_KNOCKDOWN frame must be within 56..59 (actual: 56)
+
+Results: 73 passed, 0 failed

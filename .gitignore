@@ -14,3 +14,8 @@
 # All resource files that are not explicitly loaded by the engine
 # (helps keep the repository cleaner)
 *.import
+
+# OS generated files
+.DS_Store
+*/.DS_Store
+Thumbs.db
