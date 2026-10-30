@@ -19,6 +19,10 @@ run/main_scene="res://scenes/game.tscn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://script/autoload/game_manager.gd"
+
 [display]
 
 window/size/viewport_width=480
@@ -55,3 +59,4 @@ jump={
 textures/canvas_textures/default_texture_filter=0
 2d/snap/snap_2d_transforms_to_pixel=true
 2d/snap/snap_2d_vertices_to_pixel=true
+environment/defaults/default_clear_color=Color(0.102, 0.102, 0.18, 1)

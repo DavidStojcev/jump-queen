@@ -1,0 +1,251 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://script/level/level_base.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/objects/platform.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/objects/falling_block.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/objects/spike.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/objects/signpost.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/objects/checkpoint.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/props/bush_hint.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://scenes/props/mushroom_hint.tscn" id="8"]
+
+[sub_resource type="RectangleShape2D" id="exit_shape"]
+size = Vector2(64, 200)
+
+[node name="Level02" type="Node2D"]
+script = ExtResource("1")
+spawn_point = Vector2(100, 480)
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="StartGround" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(200, 530)
+platform_size = Vector2(400, 64)
+
+[node name="QuickStep1" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(500, 470)
+platform_size = Vector2(80, 24)
+
+[node name="LandAfterQuick" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(900, 490)
+platform_size = Vector2(130, 32)
+
+[node name="ForkLower" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(1100, 470)
+platform_size = Vector2(100, 28)
+
+[node name="ForkUpper" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(1100, 280)
+platform_size = Vector2(100, 28)
+
+[node name="ForkUpperTrap" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(1300, 280)
+platform_size = Vector2(100, 28)
+
+[node name="ForkLowerSafe" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(1450, 470)
+platform_size = Vector2(120, 28)
+
+[node name="PostFork" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(1700, 490)
+platform_size = Vector2(160, 32)
+
+[node name="CheckpointArea" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(2100, 490)
+platform_size = Vector2(200, 32)
+
+[node name="TrustTestLand" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(2400, 470)
+platform_size = Vector2(120, 28)
+
+[node name="FakeLeftPath" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(2050, 370)
+platform_size = Vector2(80, 24)
+
+[node name="NarrowBridge1" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(2700, 450)
+platform_size = Vector2(48, 20)
+
+[node name="NarrowBridge2" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(2820, 420)
+platform_size = Vector2(48, 20)
+
+[node name="NarrowBridge3" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(2940, 390)
+platform_size = Vector2(48, 20)
+
+[node name="FinalPlatform" parent="Platforms" instance=ExtResource("2")]
+position = Vector2(3150, 490)
+platform_size = Vector2(200, 32)
+
+[node name="FallingBlocks" type="Node2D" parent="."]
+
+[node name="QuickFall1" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(620, 440)
+shake_duration = 0.25
+is_safe = true
+
+[node name="QuickFall2" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(720, 410)
+shake_duration = 0.2
+is_safe = false
+
+[node name="QuickFall3" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(820, 440)
+shake_duration = 0.25
+is_safe = true
+
+[node name="ForkLowerFB1" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(1200, 440)
+is_safe = true
+
+[node name="ForkLowerFB2" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(1320, 440)
+is_safe = true
+
+[node name="SpeedFB1" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(1800, 420)
+shake_duration = 0.15
+is_safe = true
+
+[node name="SpeedFB2" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(1870, 390)
+shake_duration = 0.15
+is_safe = false
+
+[node name="SpeedFB3" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(1940, 360)
+shake_duration = 0.15
+is_safe = true
+
+[node name="SpeedFB4" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(2010, 390)
+shake_duration = 0.15
+is_safe = false
+
+[node name="FinalFB1" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(3000, 430)
+shake_duration = 0.2
+is_safe = false
+
+[node name="FinalFB2" parent="FallingBlocks" instance=ExtResource("3")]
+position = Vector2(3070, 460)
+shake_duration = 0.2
+is_safe = true
+
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="QuickSpike1" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(720, 560)
+spike_width = 48.0
+
+[node name="ForkUpperSpike1" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(1400, 280)
+spike_width = 36.0
+spike_height = 20.0
+
+[node name="ForkUpperSpike2" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(1440, 280)
+spike_width = 36.0
+spike_height = 20.0
+
+[node name="SpeedSpike1" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(1850, 540)
+spike_width = 40.0
+
+[node name="SpeedSpike2" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(1920, 540)
+spike_width = 40.0
+
+[node name="SpeedSpike3" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(1990, 540)
+spike_width = 40.0
+
+[node name="FakeLeftSpike" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(2050, 350)
+spike_width = 30.0
+spike_height = 18.0
+
+[node name="NarrowSpike1" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(2760, 540)
+spike_width = 44.0
+
+[node name="NarrowSpike2" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(2880, 540)
+spike_width = 44.0
+
+[node name="FinalSpike1" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(3000, 540)
+spike_width = 44.0
+
+[node name="FinalSpike2" parent="Spikes" instance=ExtResource("4")]
+position = Vector2(3070, 540)
+spike_width = 44.0
+
+[node name="Signposts" type="Node2D" parent="."]
+
+[node name="ForkSign" parent="Signposts" instance=ExtResource("5")]
+position = Vector2(960, 460)
+sign_text = "Upper path is safe! Go up!"
+is_misleading = true
+
+[node name="SpeedSign" parent="Signposts" instance=ExtResource("5")]
+position = Vector2(1760, 390)
+sign_text = "Run fast! Don't stop!"
+is_misleading = true
+
+[node name="TrustSign" parent="Signposts" instance=ExtResource("5")]
+position = Vector2(2200, 460)
+sign_text = "Trust me. Go right."
+is_misleading = false
+
+[node name="FakeLeftSign" parent="Signposts" instance=ExtResource("5")]
+position = Vector2(2150, 380)
+sign_text = "Secret path up here!"
+is_misleading = true
+
+[node name="FinalSign" parent="Signposts" instance=ExtResource("5")]
+position = Vector2(3100, 460)
+sign_text = "Congratulations! You made it!"
+is_misleading = false
+
+[node name="Checkpoint1" parent="." instance=ExtResource("6")]
+position = Vector2(2100, 490)
+
+[node name="EnvHints" type="Node2D" parent="."]
+
+[node name="QuickDangerMush" parent="EnvHints" instance=ExtResource("8")]
+position = Vector2(690, 425)
+hint_type = 2
+
+[node name="ForkDangerBush" parent="EnvHints" instance=ExtResource("7")]
+position = Vector2(1350, 270)
+hint_type = 1
+
+[node name="SpeedDangerMush" parent="EnvHints" instance=ExtResource("8")]
+position = Vector2(1840, 380)
+hint_type = 2
+
+[node name="FakeLeftBush" parent="EnvHints" instance=ExtResource("7")]
+position = Vector2(2030, 360)
+hint_type = 1
+
+[node name="SafeBushRight" parent="EnvHints" instance=ExtResource("7")]
+position = Vector2(2380, 455)
+hint_type = 0
+
+[node name="NarrowDangerMush" parent="EnvHints" instance=ExtResource("8")]
+position = Vector2(2730, 435)
+hint_type = 2
+
+[node name="FinalSafeBush" parent="EnvHints" instance=ExtResource("7")]
+position = Vector2(3140, 475)
+hint_type = 0
+
+[node name="ExitZone" type="Area2D" parent="."]
+position = Vector2(3300, 400)
+collision_layer = 0
+collision_mask = 1
+
+[node name="ExitShape" type="CollisionShape2D" parent="ExitZone"]
+shape = SubResource("exit_shape")
