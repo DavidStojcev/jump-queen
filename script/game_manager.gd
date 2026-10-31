@@ -67,6 +67,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			var hud = get_node_or_null("HUD")
 			if hud:
 				hud.visible = not hud.visible
+		KEY_ESCAPE:
+			get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
 
 
 

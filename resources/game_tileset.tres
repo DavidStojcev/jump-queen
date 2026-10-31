@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" format=3 uid="uid://boqxvxij4bx3j"]
 
-[ext_resource type="Texture2D" uid="uid://buchtvlhebit8" path="res://assets/sprites/world_tileset.png" id="1_1lckd"]
-[ext_resource type="Texture2D" uid="uid://cofhc8tueboyf" path="res://assets/sprites/platforms.png" id="2_mkbxu"]
+[ext_resource type="Texture2D" uid="uid://buchtvlhebit8" path="res://assets/sprites/Basic Platform tiles/world_tileset.png" id="1_fsuh8"]
+[ext_resource type="Texture2D" uid="uid://cofhc8tueboyf" path="res://assets/sprites/Basic Platform tiles/platforms.png" id="2_wucop"]
 [ext_resource type="Texture2D" uid="uid://boy8g8r72004a" path="res://assets/sprites/Background & Trees/PixelTreeSet/Trees_Outlined.png" id="3_fsuh8"]
 [ext_resource type="Texture2D" uid="uid://bgud61qfeepux" path="res://assets/sprites/Wood VFX 01/Wood VFX 01 Hit.png" id="4_wucop"]
 [ext_resource type="Texture2D" uid="uid://dpacppbxnvc0d" path="res://assets/sprites/Wood VFX 01/Wood VFX 01 Repeatable.png" id="5_hpqgo"]
@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://dy0580bg0mvs1" path="res://assets/sprites/Background & Trees/PixelTreeSet/Trees_Alt.png" id="17_8uhld"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_udjux"]
-texture = ExtResource("1_1lckd")
+texture = ExtResource("1_fsuh8")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -216,7 +216,7 @@ texture = ExtResource("1_1lckd")
 4:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3ekrg"]
-texture = ExtResource("2_mkbxu")
+texture = ExtResource("2_wucop")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0, -8, 0)
 1:0/0 = 0
@@ -2161,10 +2161,8 @@ texture = ExtResource("13_vvsra")
 6:37/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 7:37/0 = 0
 7:37/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-26:37/0 = 0
-26:37/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 5, 8, 5, 8, 8, -8, 8)
 27:37/0 = 0
-27:37/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+27:37/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.0791531, -0.35971642, 5.935339, -8, 8, -8, 8, 8, -8, 8)
 29:37/0 = 0
 29:37/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:38/0 = 0
@@ -2172,7 +2170,7 @@ texture = ExtResource("13_vvsra")
 4:38/0 = 0
 4:38/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 26:38/0 = 0
-26:38/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+26:38/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.4388695, 0.5395775, 6.4749146, -8, 8, -8, 8, 8, -8, 8)
 27:38/0 = 0
 27:38/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:39/0 = 0
@@ -2198,7 +2196,7 @@ texture = ExtResource("13_vvsra")
 19:39/0 = 0
 19:39/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2, 8, 2, 8, 8, -8, 8)
 21:39/0 = 0
-21:39/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2, 8, 2, 8, 8, -8, 8)
+21:39/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 3.956892, 8, 3.8579702, 8, 8, -8, 8)
 23:39/0 = 0
 23:39/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 24:39/0 = 0

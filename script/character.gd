@@ -31,15 +31,15 @@ signal recovered()
 signal bounced(bounce_velocity: float)
 
 @export_group("Character Textures")
-@export var character_texture: Texture2D = preload("res://assets/sprites/knight.png")
+@export var character_texture: Texture2D = preload("res://assets/sprites/Basic Platform tiles/knight.png")
 
 @export_group("Movement")
 @export var walk_speed: float = 140.0
 @export var ground_friction: float = 1200.0
 
 @export_group("Jump Physics")
-@export var min_jump_velocity: float = 240.0
-@export var max_jump_velocity: float = 680.0
+@export var min_jump_velocity: float = 200.0
+@export var max_jump_velocity: float = 600.0
 @export var min_horizontal_jump_velocity: float = 95.0
 @export var max_horizontal_jump_velocity: float = 230.0
 @export var max_charge_time: float = 0.6  # 36 ticks at 60hz
