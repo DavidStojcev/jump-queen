@@ -60,10 +60,7 @@ func _physics_process(delta: float) -> void:
 	if not is_instance_valid(target):
 		return
 
-	var pos: Vector2 = target.global_position
-	var room_x: int = int(floor(pos.x / room_width))
-	var room_y: int = int(floor(pos.y / room_height))
-	var new_room := Vector2i(room_x, room_y)
+	var new_room: Vector2i = _calculate_target_room()
 
 	if new_room != current_room:
 		var old_room := current_room
@@ -85,13 +82,29 @@ func _physics_process(delta: float) -> void:
 		offset = Vector2.ZERO
 
 
-func _snap_to_target_room() -> void:
+func _calculate_target_room() -> Vector2i:
+	if not is_instance_valid(target):
+		return current_room
+
 	var pos: Vector2 = target.global_position
-	current_room = Vector2i(
-		int(floor(pos.x / room_width)),
-		int(floor(pos.y / room_height))
-	)
+	var room_x: int = int(floor(pos.x / room_width))
+	var room_y: int = int(floor(pos.y / room_height))
+
+	# If the target is grounded (standing on a platform), ensure the camera snaps to
+	# the room containing the platform that supports the character's feet!
+	if "is_on_floor" in target and target.is_on_floor():
+		var feet_y: float = pos.y + 18.0
+		room_y = int(floor((feet_y - 1.0) / room_height))
+
+	return Vector2i(room_x, room_y)
+
+
+func _snap_to_target_room() -> void:
+	if not is_instance_valid(target):
+		return
+	current_room = _calculate_target_room()
 	_snap_to_room(current_room)
+
 
 
 func _snap_to_room(room: Vector2i) -> void:

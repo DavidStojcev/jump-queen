@@ -350,7 +350,15 @@ func _process_airborne_state(delta: float) -> void:
 
 
 func _handle_airborne_collisions(pre_slide_velocity: Vector2) -> void:
+	# Check for breakable crates or props
+	for i in range(get_slide_collision_count()):
+		var col := get_slide_collision(i)
+		var collider := col.get_collider()
+		if collider and collider.has_method("break_crate"):
+			collider.break_crate()
+
 	# Ceiling bonk: cut upward momentum
+
 	if is_on_ceiling() and pre_slide_velocity.y < 0.0:
 		velocity.y = 0.0
 		_play_sfx(bounce_audio_stream, 0.90)

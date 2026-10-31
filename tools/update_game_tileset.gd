@@ -196,7 +196,24 @@ func _init() -> void:
 							var td: TileData = source.get_tile_data(Vector2i(rx, ry), 0)
 							if td:
 								td.add_collision_polygon(0)
-								td.set_collision_polygon_points(0, 0, full_box_poly)
+								var first_row: int = 0
+								for py in range(reg_size.y):
+									var has_pixel: bool = false
+									for px in range(reg_size.x):
+										if sub_img.get_pixel(px, py).a > 0.05:
+											has_pixel = true
+											break
+									if has_pixel:
+										first_row = py
+										break
+								var top_y: float = float(first_row) - float(reg_size.y) / 2.0
+								var poly: PackedVector2Array = [
+									Vector2(-reg_size.x / 2.0, top_y),
+									Vector2(reg_size.x / 2.0, top_y),
+									Vector2(reg_size.x / 2.0, reg_size.y / 2.0),
+									Vector2(-reg_size.x / 2.0, reg_size.y / 2.0)
+								]
+								td.set_collision_polygon_points(0, 0, poly)
 						added_count += 1
 
 		print("Source ", sid, " [", config["name"], "]: created ", added_count, " tiles (Grid: ", cols, "x", rows, ")")

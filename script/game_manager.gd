@@ -6,24 +6,25 @@ extends Node2D
 @onready var hud_desc: Label = $HUD/MarginContainer/VBoxContainer/RoomDesc
 @onready var hud_controls: Label = $HUD/MarginContainer/VBoxContainer/ControlsHint
 
-const SPAWN_SCREEN_1: Vector2 = Vector2(64, 214)
-const SPAWN_SCREEN_2: Vector2 = Vector2(210, -50)
-const SPAWN_SCREEN_3: Vector2 = Vector2(360, -320)
+const SPAWN_SCREEN_1: Vector2 = Vector2(64, 230)
+const SPAWN_SCREEN_2: Vector2 = Vector2(264, -48)
+const SPAWN_SCREEN_3: Vector2 = Vector2(328, -320)
 
 const ROOM_INFO: Dictionary = {
 	Vector2i(0, 0): {
-		"title": "🏰 The Bastion's Crucible [Screen 1]",
-		"desc": "Wall-Bounce Training • Jump right into the stone wall to ricochet onto the high ledge."
+		"title": "🏰 Screen 1: The Ruined Lower Bastion",
+		"desc": "Armory & Wall-Bouncing • Ricochet off the stone buttress at x=11 to reach the High Guard Shelf."
 	},
 	Vector2i(0, -1): {
-		"title": "❄️ The Frostbound Vault [Screen 2]",
-		"desc": "Slippery Ice & Tight Ceiling • Watch out for ceiling icicle bonks! Keep jump charge low."
+		"title": "❄️ Screen 2: The Frozen Catacombs",
+		"desc": "Permafrost & Icicle Vaults • Slide-charging on ice! Keep low under the icicle arch (Stage 13 max) to avoid bonking."
 	},
 	Vector2i(0, -2): {
-		"title": "🌪️ The Gale-Torn Spire [Screen 3]",
-		"desc": "Gale Storm & Spikes • Heavy leftward wind! Fight the gale to reach the Queen's Crown."
+		"title": "🌪️ Screen 3: The Howling Battlements",
+		"desc": "Spire Summit & The Abyss • Constant leftward blizzard (-180 px/s²)! Commit to max charge against the gale."
 	}
 }
+
 
 
 func _ready() -> void:
@@ -45,7 +46,7 @@ func _update_hud(room: Vector2i) -> void:
 		hud_desc.text = info["desc"]
 	else:
 		hud_title.text = "Screen [%d, %d]" % [room.x, room.y]
-		hud_desc.text = "Ascending the Castle Spire"
+		hud_desc.text = "Ascending the Citadel of the Frost Gale"
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -63,15 +64,22 @@ func _unhandled_input(event: InputEvent) -> void:
 		KEY_R:
 			teleport_player(SPAWN_SCREEN_1)
 		KEY_H:
-			if hud_controls:
-				hud_controls.visible = not hud_controls.visible
+			var hud = get_node_or_null("HUD")
+			if hud:
+				hud.visible = not hud.visible
+
 
 
 func teleport_player(target_pos: Vector2) -> void:
+	if not player:
+		player = get_node_or_null("Player")
 	if not player:
 		return
 	player.global_position = target_pos
 	player.velocity = Vector2.ZERO
 	player.current_state = PlayerCharacter.State.IDLE
+	if not camera:
+		camera = get_node_or_null("RoomCamera")
 	if camera:
 		camera._snap_to_target_room()
+
